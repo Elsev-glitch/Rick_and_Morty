@@ -13,7 +13,7 @@
     <color name="white70">#B3FFFFFF</color>
 
     //green
-    <color name="green">#2D7E3F</color>
+    <color name="green">#00FF39</color>
 
     //gray
     <color name="gray">#FF9E9E9E</color>
@@ -26,7 +26,7 @@
     <color name="black_light">#262626</color>
 
     //red
-    <color name="red">#E94235</color>
+    <color name="red">#FF1200</color>
     <color name="pink">#FF006A</color>
 
     //yellow
