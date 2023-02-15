@@ -10,6 +10,7 @@ import com.example.rickandmorty.R
 import com.example.rickandmorty.core.BaseFragment
 import com.example.rickandmorty.core.image.ImageLoader
 import com.example.rickandmorty.databinding.ScreenPersonsBinding
+import com.example.rickandmorty.presentation.Screens
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -24,7 +25,11 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
     @Inject
     lateinit var imageLoader: ImageLoader
 
-    private val personAdapter by lazy { PersonAdapter(imageLoader) {} }
+    private val personAdapter by lazy {
+        PersonAdapter(imageLoader) {
+            router.navigateTo(Screens.personDescription(it))
+        }
+    }
 
     override val title: String
         get() = getString(R.string.persons_title)

@@ -2,6 +2,7 @@ package com.example.rickandmorty.data.repositories
 
 import com.example.rickandmorty.data.converters.asPerson
 import com.example.rickandmorty.data.data_sources.remote.Api
+import com.example.rickandmorty.domain.entities.Person
 import com.example.rickandmorty.domain.entities.Persons
 import com.example.rickandmorty.domain.repositories.PersonsRepository
 
@@ -18,5 +19,9 @@ class PersonsRepositoryImpl(
             persons = response.results?.map { it.asPerson() },
             maxPage = response.info?.pages
         )
+    }
+
+    override suspend fun getPerson(personId: Int): Person? {
+        return api.getPerson(personId).asPerson()
     }
 }

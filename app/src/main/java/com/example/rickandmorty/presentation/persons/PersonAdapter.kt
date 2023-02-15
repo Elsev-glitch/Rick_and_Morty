@@ -15,7 +15,7 @@ import com.example.rickandmorty.domain.entities.Person
 
 class PersonAdapter(
     private val imageLoader: ImageLoader,
-    private val details: (Person) -> Unit
+    private val details: (Int) -> Unit
 ) :
     PagingDataAdapter<Person, PersonViewHolder>(object : DiffUtil.ItemCallback<Person>() {
         override fun areItemsTheSame(oldItem: Person, newItem: Person): Boolean =
@@ -29,8 +29,8 @@ class PersonAdapter(
             LayoutInflater.from(parent.context).inflate(R.layout.item_person, parent, false),
             imageLoader
         ) {
-            getItem(it)?.let { person ->
-                details(person)
+            getItem(it)?.id?.let { personId ->
+                details(personId)
             }
         }
 
