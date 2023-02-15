@@ -9,4 +9,5 @@
     <string name="episodes">Number of episodes</string>
     <string name="species">Species</string>
     <string name="created">Was created</string>
+    <string name="person_details_title">Персонаж</string>
 </resources>

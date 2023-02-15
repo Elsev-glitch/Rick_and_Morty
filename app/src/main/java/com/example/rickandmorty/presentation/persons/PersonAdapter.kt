@@ -54,6 +54,11 @@ class PersonViewHolder(
     }
 
     fun bind(item: Person) = with(binding) {
+        name.isVisible = !item.name.isNullOrEmpty()
+        statusBlock.isVisible = !item.status.isNullOrEmpty()
+        locationLabel.isVisible = !item.location?.name.isNullOrEmpty()
+        originLabel.isVisible = !item.origin?.name.isNullOrEmpty()
+
         name.text = item.name
         status.text = item.status
         location.text = item.location?.name

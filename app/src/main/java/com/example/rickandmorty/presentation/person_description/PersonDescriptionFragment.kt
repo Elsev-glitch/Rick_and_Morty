@@ -31,6 +31,9 @@ class PersonDescriptionFragment : BaseFragment(R.layout.screen_person_descriptio
     @Inject
     lateinit var imageLoader: ImageLoader
 
+    override val title: String?
+        get() = getString(R.string.person_details_title)
+
     override fun bind() {
         with(viewModel) {
             observeNullable(person) { person ->
