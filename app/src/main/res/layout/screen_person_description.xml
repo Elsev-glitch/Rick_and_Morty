@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray1"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/Text.White.24.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="Rick" />
+
+        <FrameLayout
+            android:id="@+id/image_block"
+            android:layout_width="260dp"
+            android:layout_height="260dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ic_image_placeholder" />
+
+            <ProgressBar
+                android:id="@+id/image_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/status_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_status"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                tools:src="@drawable/bg_circle_status_green" />
+
+            <TextView
+                android:id="@+id/status"
+                style="@style/Text.White.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/gender_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/gender" />
+
+        <TextView
+            android:id="@+id/gender"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+        <TextView
+            android:id="@+id/episodes_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/episodes" />
+
+        <TextView
+            android:id="@+id/episodes"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+        <TextView
+            android:id="@+id/species_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/species" />
+
+        <TextView
+            android:id="@+id/species"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+        <TextView
+            android:id="@+id/location_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/location" />
+
+        <TextView
+            android:id="@+id/location"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+        <TextView
+            android:id="@+id/origin_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/origin" />
+
+        <TextView
+            android:id="@+id/origin"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+        <TextView
+            android:id="@+id/created_label"
+            style="@style/Text.Gray.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/created" />
+
+        <TextView
+            android:id="@+id/created"
+            style="@style/Text.White.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="one" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
