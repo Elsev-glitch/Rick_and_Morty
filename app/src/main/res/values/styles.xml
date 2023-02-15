@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    // Text guideline: Text.Цвет.Размер.Жирность
+
+    <style name="Text" parent="TextAppearance.MaterialComponents.Body1"/>
+
+    <style name="Text.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Black.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Black.14.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.Black.15">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.Black.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Black.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Black.18.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.Black.24">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.Black.24.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.Black.36">
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="Text.Orange">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="Text.Orange.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Pink">
+        <item name="android:textColor">@color/pink</item>
+    </style>
+
+    <style name="Text.Pink.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.RedError">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Text.RedError.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.RedError.15">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.RedError.14.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.BlackLight">
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="Text.BlackLight.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.BlackLight.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.BlackLight.16.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.BlackLight.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.BlackLight.18.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="Text.Gray.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Gray.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Gray.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.White.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.White.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.White.16.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.White.18">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.White.18.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.White.24">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.White.24.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    //Button
+    <style name="Button" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/Rounded</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    
+    <style name="Rounded">
+        <item name="cornerSize">4dp</item>
+    </style>
+
+</resources>
