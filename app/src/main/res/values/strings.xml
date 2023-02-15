@@ -3,4 +3,6 @@
     <string name="persons_title">Персонажи</string>
     <string name="location">Last known location</string>
     <string name="origin">Origin</string>
+    <string name="empty_placeholder">Ничего не найдено</string>
+    <string name="error_connection">Ошибка соединения</string>
 </resources>
