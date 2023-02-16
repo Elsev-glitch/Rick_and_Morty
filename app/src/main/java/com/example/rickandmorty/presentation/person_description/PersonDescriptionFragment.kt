@@ -37,27 +37,7 @@ class PersonDescriptionFragment : BaseFragment(R.layout.screen_person_descriptio
     override fun bind() {
         with(viewModel) {
             observeNullable(person) { person ->
-                binding.name.text = person?.name
-                binding.status.text = person?.status
-                binding.gender.text = person?.gender
-                binding.episodes.text = person?.episode?.size?.toString()
-                binding.species.text = person?.species
-                binding.location.text = person?.location?.name
-                binding.origin.text = person?.origin?.name
-                binding.created.text = person?.created
-
-                binding.iconStatus.setImageResource(
-                    if (person?.isAlive() == true) R.drawable.bg_circle_status_green
-                    else R.drawable.bg_circle_status_red
-                )
-
-                imageLoader.displayImage(
-                    person?.image,
-                    R.drawable.ic_image_placeholder,
-                    binding.image
-                ) {
-                    binding.imageLoading.isVisible = it
-                }
+                initComponents(person)
             }
             loading(loading)
             failure(failure) { handleFailure(it) }
@@ -95,7 +75,16 @@ class PersonDescriptionFragment : BaseFragment(R.layout.screen_person_descriptio
             species.text = person?.species
             location.text = person?.location?.name
             origin.text = person?.origin?.name
-            created.text = person?.created
+            created.text = buildString {
+                if (!person?.createdDateWithoutTime().isNullOrEmpty())
+                    append(person?.createdDateWithoutTime())
+                if (!person?.createdDateWithoutTime().isNullOrEmpty() && !person?.createdTime()
+                        .isNullOrEmpty()
+                )
+                    append(" в ")
+                if (!person?.createdTime().isNullOrEmpty())
+                    append(person?.createdTime())
+            }
 
             iconStatus.setImageResource(
                 if (person?.isAlive() == true) R.drawable.bg_circle_status_green

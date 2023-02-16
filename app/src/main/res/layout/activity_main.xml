@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray1"
     android:fitsSystemWindows="true"
     tools:context=".presentation.MainActivity">
 
@@ -18,21 +17,22 @@
             android:layout_width="match_parent"
             android:layout_height="?android:actionBarSize"
             android:background="@color/gray3"
-            app:navigationIcon="@drawable/ic_arrow_back">
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:collapseIcon="@drawable/ic_arrow_back">
 
             <TextView
                 android:id="@+id/toolbar_title"
                 style="@style/Text.White.18.Medium"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.appbar.MaterialToolbar>
 
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@color/gray1"/>
     </LinearLayout>
 
     <RelativeLayout

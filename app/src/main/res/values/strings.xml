@@ -10,4 +10,7 @@
     <string name="species">Species</string>
     <string name="created">Was created</string>
     <string name="person_details_title">Персонаж</string>
+    <string name="search">Поиск</string>
+    <string name="enter_person_name">Введите имя персонажа</string>
+    <string name="reset">Сбросить</string>
 </resources>
