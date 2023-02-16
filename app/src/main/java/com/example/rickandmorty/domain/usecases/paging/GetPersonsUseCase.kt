@@ -17,6 +17,6 @@ class GetPersonsUseCase @Inject constructor(
     }
 
     class Params(
-        val name: String? = null
+        val name: String?
     )
 }

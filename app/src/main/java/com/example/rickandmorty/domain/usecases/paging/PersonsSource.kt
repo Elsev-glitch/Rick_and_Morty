@@ -25,7 +25,7 @@ class PersonsSource(
             val page = params.key ?: START_PAGE
             val response = repository.getPersons(
                 page = page,
-                name = requestParams.name
+                name = requestParams.name.takeIf { it?.isNotEmpty() == true }
             )
             LoadResult.Page(
                 data = response?.persons.orEmpty(),
