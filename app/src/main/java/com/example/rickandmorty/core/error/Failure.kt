@@ -14,7 +14,7 @@ sealed class Failure {
 
     companion object {
         fun handle(exception: Exception): Failure {
-            return ServerError("Неизвестная ошибка")
+            return ServerError("Ошибка соединения")
         }
     }
 }
