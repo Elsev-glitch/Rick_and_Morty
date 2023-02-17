@@ -1,18 +1,10 @@
 package com.example.rickandmorty.domain.entities
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import java.text.SimpleDateFormat
 import java.util.*
 
-data class Persons(
-    val persons: List<Person>?,
-    val maxPage: Int?
-)
-
-@Parcelize
 data class Person(
     val id: Int?,
     val name: String?,
@@ -26,7 +18,7 @@ data class Person(
     val episode: List<String>?,
     val url: String?,
     val created: String?
-): Parcelable {
+) {
 
     fun isAlive() = status?.equals("alive", true) == true
 
@@ -45,14 +37,12 @@ data class Person(
     }
 }
 
-@Parcelize
 data class Origin(
     val name: String?,
     val url: String?
-): Parcelable
+)
 
-@Parcelize
 data class Location(
     val name: String?,
     val url: String?
-): Parcelable
+)

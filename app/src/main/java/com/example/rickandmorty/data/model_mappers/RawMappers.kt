@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.converters
+package com.example.rickandmorty.data.model_mappers
 
 import com.example.rickandmorty.data.models.RawLocation
 import com.example.rickandmorty.data.models.RawOrigin
