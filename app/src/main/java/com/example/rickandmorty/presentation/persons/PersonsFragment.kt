@@ -26,7 +26,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import javax.inject.Inject
 
-
 @AndroidEntryPoint
 class PersonsFragment : BaseFragment(R.layout.screen_persons) {
 
@@ -58,10 +57,7 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
                 personAdapter.loadStateFlow.distinctUntilChangedBy { it.refresh }.collect {
                     when (it.refresh) {
                         is LoadState.Loading -> fadeInProgress()
-                        is LoadState.NotLoading -> {
-                            fadeOutProgress()
-                            binding.emptyPlaceholder.isVisible = personAdapter.itemCount == 0
-                        }
+                        is LoadState.NotLoading -> fadeOutProgress()
                         is LoadState.Error -> {
                             fadeOutProgress()
                             showSystemMessage(
@@ -70,6 +66,8 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
                             )
                         }
                     }
+                    binding.emptyPlaceholder.isVisible =
+                        it.refresh is LoadState.NotLoading && personAdapter.itemCount == 0
                 }
             }
             observeNullable(searchedPersonName) {
@@ -96,11 +94,23 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
                 val searchView = actionSearch?.actionView as SearchView
                 searchView.queryHint = getString(R.string.enter_person_name)
 
-                val searchTextField = searchView.findViewById<View>(androidx.appcompat.R.id.search_src_text) as EditText
-                searchTextField.setHintTextColor(ContextCompat.getColor(requireContext(), R.color.white40))
-                searchTextField.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                val searchTextField =
+                    searchView.findViewById<View>(androidx.appcompat.R.id.search_src_text) as EditText
+                searchTextField.setHintTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white40
+                    )
+                )
+                searchTextField.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white
+                    )
+                )
 
-                val searchCloseIcon : ImageView = searchView.findViewById<View>(androidx.appcompat.R.id.search_close_btn) as ImageView
+                val searchCloseIcon: ImageView =
+                    searchView.findViewById<View>(androidx.appcompat.R.id.search_close_btn) as ImageView
                 searchCloseIcon.setImageResource(R.drawable.ic_close)
 
                 searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -117,7 +127,7 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                when(menuItem.itemId) {
+                when (menuItem.itemId) {
                     R.id.action_reset -> viewModel.submitPersonName(null)
                 }
                 return false
@@ -125,7 +135,8 @@ class PersonsFragment : BaseFragment(R.layout.screen_persons) {
 
             override fun onPrepareMenu(menu: Menu) {
                 super.onPrepareMenu(menu)
-                menu.findItem(R.id.action_reset).isVisible = !viewModel.searchedPersonName.value.isNullOrEmpty()
+                menu.findItem(R.id.action_reset).isVisible =
+                    !viewModel.searchedPersonName.value.isNullOrEmpty()
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }

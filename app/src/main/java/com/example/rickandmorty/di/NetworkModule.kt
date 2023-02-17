@@ -2,6 +2,8 @@ package com.example.rickandmorty.di
 
 import com.example.rickandmorty.BuildConfig
 import com.example.rickandmorty.data.data_sources.remote.Api
+import com.example.rickandmorty.data.repositories.PersonsRepositoryImpl
+import com.example.rickandmorty.domain.repositories.PersonsRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -19,7 +21,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class IOModule {
+class NetworkModule {
 
     @Provides
     internal fun provideBaseUrl(): String = BuildConfig.BASE_URL
